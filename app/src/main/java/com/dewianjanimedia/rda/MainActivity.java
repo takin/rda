@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 //    mp.setDataSource("http://173.224.124.217:8160");
 //    mp.setDataSource("http://ina.vinhostmedia.com:8000/user300");
 
-    ViewPager mViewPager;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
