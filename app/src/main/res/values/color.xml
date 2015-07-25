@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="base_color">#FF457816</color>
+    <color name="base_background_color">#81AAFF99</color>
+    <color name="alert_color">#ffe60000</color>
+    <color name="success_color">#ff08ef00</color>
+    <color name="version_color">#ff00c282</color>
+</resources>
