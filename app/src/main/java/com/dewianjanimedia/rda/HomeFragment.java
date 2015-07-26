@@ -60,8 +60,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Stre
         // cek terlebih dahulu apakah streaming sudah berjalan atau belum.
         // jika sudah, maka tidak perlu di re-trigger sehingga streaming tidak
         // terputus ketika aplikasi masuk dalam mode pause
-        if(!((MainActivity)getActivity()).isPlayed()) {
+        if(!((MainActivity)getActivity()).isPlayed() && !((MainActivity)getActivity()).isHasBeenPaused()) {
             mActionListener.startStream();
+        }
+
+        // apabila sebelumnya user pernah menekan tombol pause
+        // maka ketika melakukan re-instasiate fragment panggil onStreamingStopped()
+        // untuk men-set ulang text sesuai dengan state UI saat ini (streaming paused)
+        // karena default text adalah 'Menghubungi server...'
+        if(((MainActivity)getActivity()).isHasBeenPaused()){
+            onStreamingStopped();
         }
 
         return rootView;

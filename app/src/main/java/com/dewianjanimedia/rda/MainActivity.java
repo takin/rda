@@ -23,6 +23,21 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private StreamingListener streamingListener;
 
+    /**
+     * flag untuk menandakan user pernah menekan tombol pause
+     * (streaming pernah berjalan kemudian di pause)
+     * flag ini dibutuhkan untuk mencegah player autoplay
+     * apabila user melakukan navigasi ke fragment lain selain home
+     * kemudian kembali ke home.
+     * karena setiap kali menuju home, maka UI akan di build ulang dan
+     * secara default, sistem akan mencoba melakukan autoplay
+     * (HomeFragment, line 63-65)
+     *
+     * apabila pernah di pause (true), maka ketika proses re-draw UI
+     * sistem tidak akan melakukan autoplay
+     */
+    private boolean hasBeenPaused = false;
+
     // flag untuk menandakan state dari streaming
     // -1 = stoped, 1 = played, 2= buffering
     private int playStatus = -1;
@@ -100,6 +115,10 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         return playStatus == 1;
     }
 
+    public boolean isHasBeenPaused(){
+        return hasBeenPaused;
+    }
+
     @Override
     public void startStream() {
 
@@ -115,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     @Override
     public void pauseStream(){
+        hasBeenPaused = true;
         if(mediaPlayer != null){
             mediaPlayer.stop();
         }
