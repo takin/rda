@@ -3,7 +3,13 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:colorPrimary">@color/base_color</item>
+        <item name="android:colorPrimary">@color/color_primary</item>
+        <item name="android:colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="android:colorAccent">@color/accent_material_light</item>
+        <item name="actionBarTabBarStyle">@style/AcionBarDivider</item>
+    </style>
 
+    <style name="AcionBarDivider" parent="AppTheme">
+        <item name="android:divider">#FFFFFFFF</item>
     </style>
 </resources>

@@ -1,7 +1,6 @@
-package com.dewianjanimedia.rda;
+package com.dewianjanimedia.rda.fragment;
 
 import android.app.Activity;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.dewianjanimedia.rda.activity.MainActivity;
+import com.dewianjanimedia.rda.R;
+import com.dewianjanimedia.rda.listener.StreamingControlListener;
+import com.dewianjanimedia.rda.listener.StreamingListener;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener, StreamingListener {

@@ -1,4 +1,4 @@
-package com.dewianjanimedia.rda;
+package com.dewianjanimedia.rda.fragment;
 
 
 import android.os.Bundle;
@@ -6,28 +6,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.dewianjanimedia.rda.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link JadwalFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
-public class JadwalFragment extends Fragment {
+public class ProfilFragment extends Fragment {
 
-    public static JadwalFragment newInstance() {
-        return new JadwalFragment();
+    public static ProfilFragment newInstance(){
+        return new ProfilFragment();
     }
 
-    public JadwalFragment() {
+    public ProfilFragment() {
         // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -35,7 +28,7 @@ public class JadwalFragment extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        View rootView = inflater.inflate(R.layout.fragment_jadwal,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_profil,container,false);
 
         Bundle arg = getArguments();
 

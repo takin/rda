@@ -1,4 +1,4 @@
-package com.dewianjanimedia.rda;
+package com.dewianjanimedia.rda.activity;
 
 import java.util.Locale;
 
@@ -14,6 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
+import com.dewianjanimedia.rda.R;
+import com.dewianjanimedia.rda.listener.StreamingControlListener;
+import com.dewianjanimedia.rda.listener.StreamingListener;
+import com.dewianjanimedia.rda.fragment.HomeFragment;
+import com.dewianjanimedia.rda.fragment.JadwalFragment;
+import com.dewianjanimedia.rda.fragment.ProfilFragment;
 import com.spoledge.aacdecoder.AACPlayer;
 import com.spoledge.aacdecoder.PlayerCallback;
 
@@ -41,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     // flag untuk menandakan state dari streaming
     // -1 = stoped, 1 = played, 2= buffering
     private int playStatus = -1;
+
+    private int bufferSize = 2000;
 
     private AACPlayer mediaPlayer;
     private static final String RADIO_CHANNEL = "http://103.237.33.44:8000/user300";
@@ -127,9 +135,12 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
         if(mediaPlayer == null){
             mediaPlayer = new AACPlayer(this);
+            mediaPlayer.setAudioBufferCapacityMs(3000);
+            mediaPlayer.setDecodeBufferCapacityMs(1500);
+            mediaPlayer.setResponseCodeCheckEnabled(false);
         }
 
-        mediaPlayer.playAsync(RADIO_CHANNEL);
+        mediaPlayer.playAsync(RADIO_CHANNEL,32);
     }
 
     @Override

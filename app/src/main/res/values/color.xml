@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="base_color">#FF457816</color>
-    <color name="base_background_color">#81AAFF99</color>
     <color name="alert_color">#ffe60000</color>
     <color name="success_color">#ff08ef00</color>
     <color name="version_color">#ff00c282</color>
+    <color name="window_background">#81AAFF99</color>
+    <color name="color_primary">#ff3c6a14</color>
+    <color name="color_primary_dark">#ff3c6a14</color>
+    <color name="text_color_primary">#ffffffff</color>
+    <color name="navigation_bar_color">#ff507d14</color>
 </resources>
