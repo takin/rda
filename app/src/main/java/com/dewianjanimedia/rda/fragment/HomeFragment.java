@@ -109,7 +109,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Stre
     public void onStreamingStarted() {
         if(isAdded()) {
             streamingButton.setClickable(true);
-            streamingButton.setImageResource(R.drawable.on);
+            streamingButton.setImageResource(R.drawable.player_play);
             streamingStatus.setText(R.string.streaming_status_on);
             streamingStatus.setTextColor(getResources().getColor(R.color.base_color));
             streamingHint.setText(R.string.streaming_hint_on);
@@ -120,7 +120,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Stre
     public void onStreamingStopped() {
         if(isAdded()) {
             streamingButton.setClickable(true);
-            streamingButton.setImageResource(R.drawable.off);
+            streamingButton.setImageResource(R.drawable.player_stop);
             streamingStatus.setText(R.string.streaming_status_off);
             streamingStatus.setTextColor(getResources().getColor(R.color.alert_color));
             streamingHint.setText(R.string.streaming_hint_off);
@@ -134,7 +134,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Stre
         // untuk mencegah force close
         if(isAdded()) {
             streamingButton.setClickable(true);
-            streamingButton.setImageResource(R.drawable.off);
+            streamingButton.setImageResource(R.drawable.player_stop);
             streamingStatus.setText(R.string.streaming_status_off);
             streamingStatus.setTextColor(getResources().getColor(R.color.alert_color));
             streamingHint.setText(R.string.streaming_hint_offline);

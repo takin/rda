@@ -7,7 +7,7 @@
     <string name="profil">Profil</string>
 
     <string name="home_title">Online Streaming</string>
-    <string name="version_text">Alpha version</string>
+    <string name="version_text">version 0.0.1-beta</string>
     <string name="streaming_status_on">Streaming is ON</string>
     <string name="streaming_status_off">Streaming is OFF</string>
     <string name="streaming_hint_off">Klik gambar untuk memulai streaming</string>

@@ -5,15 +5,43 @@ package com.dewianjanimedia.rda.model;
  */
 public class JadwalAcara {
 
+    public static final String ID = "ID";
+    public static final String NAMA = "NAMA";
+    public static final String JAM = "JAM";
+    public static final String TIPE = "TIPE";
+    public static final String HARI = "HARI";
+    public static final String REGULER = "Acara Harian";
+    public static final String MINGGUAN = "Acara Mingguan";
+
     private String time;
     private String programName;
     private String day;
-    private String announcerName;
+    private String programType;
+    private int id;
 
-    public JadwalAcara(){
-
+    public JadwalAcara(String jam, String nama, String tipe, String hari){
+        if(nama != null) {
+            setProgramName(nama);
+        }
+        if(jam != null){
+            setTime(jam);
+        }
+        if(hari != null){
+            setDay(hari);
+        }
+        if (tipe != null) {
+            setProgramType(tipe);
+        }
     }
 
+
+    public int getId(){
+        return this.id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
 
     public String getTime(){
         return this.time;
@@ -27,8 +55,8 @@ public class JadwalAcara {
         return this.day;
     }
 
-    public String getAnnouncerName(){
-        return this.announcerName;
+    public String getProgramType(){
+        return this.programType;
     }
 
     public void setTime(String time){
@@ -43,7 +71,7 @@ public class JadwalAcara {
         this.day = day;
     }
 
-    public void setAnnouncerName(String name){
-        this.announcerName = name;
+    public void setProgramType(String type){
+        this.programType = type;
     }
 }
