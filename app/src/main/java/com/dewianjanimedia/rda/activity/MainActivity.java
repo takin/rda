@@ -2,6 +2,7 @@ package com.dewianjanimedia.rda.activity;
 
 import java.util.Locale;
 
+import android.content.DialogInterface;
 import android.media.AudioTrack;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,8 +11,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.SparseArray;
+import android.view.KeyEvent;
 import android.view.ViewGroup;
 
 import com.dewianjanimedia.rda.R;
@@ -132,6 +136,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         if(streamingListener == null){
             streamingListener = (StreamingListener) mSectionsPagerAdapter.getFragment(0);
         }
+
+        streamingListener.onStreamingStart();
+
         if(mediaPlayer == null){
             mediaPlayer = new AACPlayer(this);
             mediaPlayer.setAudioBufferCapacityMs(3000);
@@ -156,6 +163,30 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     @Override
     public void onPause(){
         super.onPause();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            new AlertDialog.Builder(this)
+                    .setMessage(R.string.exit_message)
+                    .setNegativeButton(R.string.hide_button, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            MainActivity.this.moveTaskToBack(true);
+                        }
+                    })
+                    .setPositiveButton(R.string.exit_button, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            MainActivity.this.finish();
+                        }
+                    })
+                    .create().show();
+            return true;
+        } else {
+            return super.onKeyDown(keyCode,event);
+        }
     }
 
     @Override

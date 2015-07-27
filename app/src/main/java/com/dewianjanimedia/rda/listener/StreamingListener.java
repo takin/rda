@@ -9,6 +9,7 @@ import com.spoledge.aacdecoder.PlayerCallback;
  */
 public interface StreamingListener {
 
+    void onStreamingStart();
     void onStreamingStarted();
     void onStreamingStopped();
     void onStreamingError(String cause);

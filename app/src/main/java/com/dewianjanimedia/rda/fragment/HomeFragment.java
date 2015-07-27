@@ -106,6 +106,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Stre
 
 
     @Override
+    public void onStreamingStart() {
+        streamingHint.setText(R.string.loading);
+    }
+
+    @Override
     public void onStreamingStarted() {
         if(isAdded()) {
             streamingButton.setClickable(true);

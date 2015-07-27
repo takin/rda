@@ -28,7 +28,7 @@ public class JadwalFragment extends ListFragment {
 
     JadwalDB dbHelper;
     JadwalQuery query;
-    private SimpleCursorAdapter mAdapter;
+
 
     public static JadwalFragment newInstance() {
         return new JadwalFragment();

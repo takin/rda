@@ -6,6 +6,9 @@
     <string name="jadwal_acara">Jadwal acara</string>
     <string name="profil">Profil</string>
 
+    <string name="freq">FM 104.6MHz</string>
+    <string name="tagline">Media shilaturrahmi\n Menggugah inspirasi ikhwan sejati</string>
+
     <string name="home_title">Online Streaming</string>
     <string name="version_text">version 0.0.1-beta</string>
     <string name="streaming_status_on">Streaming is ON</string>
@@ -14,6 +17,10 @@
     <string name="streaming_hint_on">Klik gambar untuk menghentikan streaming</string>
     <string name="streaming_hint_offline">Koneksi dengan server bermasalah...</string>
     <string name="loading">Menghubungi server...</string>
+
+    <string name="exit_message">Untuk keluar namun tetap melanjutkan streaming, tekan tombol HIDE. Jika tidak, tekan EXIT</string>
+    <string name="exit_button">EXIT</string>
+    <string name="hide_button">HIDE</string>
 
     <string name="profil_header">Radio Dewi Anjani</string>
     <string name="profil_content">
@@ -27,5 +34,6 @@
 
     <string name="action_settings">Settings</string>
     <string name="developer">Developed By Syamsul Muttaqin</string>
+    <string name="title_activity_welcome">Welcome</string>
 
 </resources>

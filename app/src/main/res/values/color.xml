@@ -9,4 +9,5 @@
     <color name="color_primary_dark">#ff20511f</color>
     <color name="text_color_primary">#ffffffff</color>
     <color name="navigation_bar_color">#ff507d14</color>
+    <color name="splash_screen_background">#ffd2f8cf</color>
 </resources>
