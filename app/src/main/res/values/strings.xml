@@ -18,7 +18,7 @@
     <string name="streaming_hint_offline">Koneksi dengan server bermasalah...</string>
     <string name="loading">Menghubungi server...</string>
 
-    <string name="exit_message">Untuk keluar namun tetap melanjutkan streaming, tekan tombol HIDE. Jika tidak, tekan EXIT</string>
+    <string name="exit_message">Untuk keluar namun tetap melanjutkan streaming, tekan HIDE. Jika tidak, tekan EXIT</string>
     <string name="exit_button">EXIT</string>
     <string name="hide_button">HIDE</string>
 
