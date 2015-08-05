@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RDA.iml" filepath="$PROJECT_DIR$/RDA.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rda.iml" filepath="$PROJECT_DIR$/rda.iml" />
     </modules>
   </component>
 </project>

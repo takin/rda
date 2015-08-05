@@ -18,9 +18,11 @@
     <string name="streaming_hint_offline">Koneksi dengan server bermasalah...</string>
     <string name="loading">Menghubungi server...</string>
 
-    <string name="exit_message">Untuk keluar namun tetap melanjutkan streaming, tekan HIDE. Jika tidak, tekan EXIT</string>
+    <string name="exit_message">Yakin ingin menutup aplikasi ?</string>
+    <string name="exit_or_hide_message">Untuk keluar namun tetap melanjutkan streaming, tekan HIDE. Jika tidak, tekan EXIT</string>
     <string name="exit_button">EXIT</string>
     <string name="hide_button">HIDE</string>
+    <string name="cancel_button">CANCEL</string>
 
     <string name="profil_header">Radio Dewi Anjani</string>
     <string name="profil_content">

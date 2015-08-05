@@ -60,13 +60,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Stre
         // sehigga proses buffering tidak terhenti
         streamingButton.setClickable(false);
 
-        // sebelum melakukan trigger streaming setiap kali fragment UI di create
-        // cek terlebih dahulu apakah streaming sudah berjalan atau belum.
-        // jika sudah, maka tidak perlu di re-trigger sehingga streaming tidak
-        // terputus ketika aplikasi masuk dalam mode pause
-        if(!((MainActivity)getActivity()).isPlayed() && !((MainActivity)getActivity()).isHasBeenPaused()) {
-            mActionListener.startStream();
-        }
 
         // apabila sebelumnya user pernah menekan tombol pause
         // maka ketika melakukan re-instasiate fragment panggil onStreamingStopped()
@@ -82,6 +75,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Stre
     @Override
     public void onResume(){
         super.onResume();
+
         // oleh karena setiap terjadi perpindahan frgament
         // ataupun fragment masuk dalam state pause, fragment otomatis
         // di re-instansiate. Meskipun streaming sedang berjalan, tapi karena
@@ -92,6 +86,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Stre
         // dari streaming saat ini.
         if(((MainActivity)getActivity()).isPlayed()){
             onStreamingStarted();
+        }
+        else if(!((MainActivity)getActivity()).isPlayed() && !((MainActivity)getActivity()).isHasBeenPaused()) {
+        // sebelum melakukan trigger streaming setiap kali fragment UI di create
+        // cek terlebih dahulu apakah streaming sudah berjalan atau belum.
+        // jika sudah, maka tidak perlu di re-trigger sehingga streaming tidak
+        // terputus ketika aplikasi masuk dalam mode pause
+            if(mActionListener != null) {
+                mActionListener.startStream();
+            }
         }
     }
 
