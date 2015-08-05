@@ -137,7 +137,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             streamingListener = (StreamingListener) mSectionsPagerAdapter.getFragment(0);
         }
 
-        streamingListener.onStreamingStart();
+        if(streamingListener != null) {
+            streamingListener.onStreamingStart();
+        }
 
         if(mediaPlayer == null){
             mediaPlayer = new AACPlayer(this);
@@ -149,7 +151,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             mediaPlayer.setResponseCodeCheckEnabled(false);
         }
 
-        mediaPlayer.playAsync(RADIO_CHANNEL,32);
+        if(mediaPlayer != null) {
+            mediaPlayer.playAsync(RADIO_CHANNEL, 32);
+        }
     }
 
     @Override
@@ -161,15 +165,11 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     }
 
     @Override
-    public void onPause(){
-        super.onPause();
-    }
+    public void onBackPressed() {
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK){
+        if(isPlayed()){
             new AlertDialog.Builder(this)
-                    .setMessage(R.string.exit_message)
+                    .setMessage(R.string.exit_or_hide_message)
                     .setNegativeButton(R.string.hide_button, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -183,9 +183,22 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                         }
                     })
                     .create().show();
-            return true;
         } else {
-            return super.onKeyDown(keyCode,event);
+            new AlertDialog.Builder(this)
+                    .setMessage(R.string.exit_message)
+                    .setNegativeButton(R.string.cancel_button, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    })
+                    .setPositiveButton(R.string.exit_button, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            MainActivity.this.finish();
+                        }
+                    })
+                    .create().show();
         }
     }
 
@@ -207,7 +220,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                streamingListener.onStreamingStarted();
+                if(streamingListener != null) {
+                    streamingListener.onStreamingStarted();
+                }
             }
         });
     }
@@ -218,7 +233,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                streamingListener.onStreamingStopped();
+                if(streamingListener != null) {
+                    streamingListener.onStreamingStopped();
+                }
             }
         });
     }
@@ -229,7 +246,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                streamingListener.onStreamingError(throwable.getMessage());
+                if(streamingListener != null) {
+                    streamingListener.onStreamingError(throwable.getMessage());
+                }
             }
         });
     }
