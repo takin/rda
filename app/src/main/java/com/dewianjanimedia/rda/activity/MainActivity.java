@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     private int playStatus = -1;
 
     private AACPlayer mediaPlayer;
-    private static final String RADIO_CHANNEL = "http://103.237.33.44:8000/user300";
+    // private static final String RADIO_CHANNEL = "http://103.237.33.44:8000/user300";
+    private static final String RADIO_CHANNEL = "http://ina.vinhostmedia.com:8000/user300";
 
 //    mp.setDataSource("http://usa8-vn.mixstream.net:8138");
 //    mp.setDataSource("http://103.237.33.44:8000/user300");
