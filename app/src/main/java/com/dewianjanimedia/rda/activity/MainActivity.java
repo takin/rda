@@ -1,6 +1,7 @@
 package com.dewianjanimedia.rda.activity;
 
 import java.util.Locale;
+import java.util.logging.Logger;
 
 import android.content.DialogInterface;
 import android.media.AudioTrack;
@@ -243,6 +244,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     @Override
     public void playerException(final Throwable throwable) {
+        Log.e("streaming", throwable.getMessage());
         this.playStatus = -1;
         runOnUiThread(new Runnable() {
             @Override
